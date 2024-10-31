@@ -1,0 +1,95 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Applicant {
+  id                    Int      @id @default(autoincrement())
+  fullName              String
+  date                  DateTime
+  address               String
+  apartmentUnit         String
+  city                  String
+  state                 String
+  zipCode               String
+  phone                 String
+  email                 String
+  dateOfBirth           DateTime
+  socialSecurity        String
+  salaryDesired         Float
+  startDate             DateTime
+  positionApplied       String
+  equipmentExperience   String   // Text to store equipment and years of experience
+
+  // Legalities section
+  authorizedToWork      Boolean?
+  legalProofProvided    Boolean?
+  previousEmployee      Boolean?
+  previousEmploymentDate DateTime?
+  convictedFelony       Boolean?
+  onParoleOrProbation   Boolean?
+  paroleOfficerName     String?
+  paroleOfficerPhone    String?
+  transportation        Boolean?
+  validDriverLicense    Boolean?
+  driverLicenseNumber   String?
+  driverLicenseState    String?
+  driverLicenseExpDate  DateTime?
+  accidentsLast3Years   Boolean?
+  accidentCount         Int?
+  violationsLast3Years  Boolean?
+  violationCount        Int?
+  trailerProficiency    String   // Could be "YES", "NO", "SOMEWHAT"
+  drugTestConsent       Boolean
+
+  // Employment Preferences section
+  hoursDesired          String   // Options could be "Full-Time", "Part-Time", etc.
+  daysUnavailable       String?
+  willingToWorkOvertime Boolean
+
+  // Emergency Contact section
+  emergencyContactName  String
+  emergencyContactPhone String
+  emergencyContactRelation String
+  isOver18              Boolean
+  gender                String
+  maritalStatus         String
+  ethnicity             String
+
+  // Previous Employment section
+  previousCompany       String
+  previousCompanyPhone  String
+  previousCompanyAddress String
+  previousSupervisor    String
+  previousJobTitle      String
+  startingSalary        Float
+  endingSalary          Float
+  previousResponsibilities String
+  previousEmploymentFrom DateTime
+  previousEmploymentTo   DateTime
+  reasonForLeaving       String
+  canContactSupervisor   Boolean
+
+  // Military Service section
+  militaryBranch        String?
+  militaryFrom          DateTime?
+  militaryTo            DateTime?
+
+  //imagen identification
+  identificationType    String   // Puede ser "SocialSecurity", "Real_ID", "Driver_License", "Passport", "Some_Other"
+  identificationImage   String  // URL o nombre del archivo de la imagen de identificación
+  applicationStatus     Int
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
