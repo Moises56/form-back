@@ -82,4 +82,5 @@ export class CreateAplicationDto {
   @IsString() identificationType: string;
   @IsString() identificationImage: string;
   @IsNumber() applicationStatus: number;
+  @IsString() publicId: string;
 }
