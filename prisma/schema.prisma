@@ -16,21 +16,21 @@ datasource db {
 
 model Applicant {
   id                    Int      @id @default(autoincrement())
-  fullName              String
-  date                  DateTime
-  address               String
-  apartmentUnit         String
-  city                  String
-  state                 String
-  zipCode               String
-  phone                 String
-  email                 String
-  dateOfBirth           DateTime
-  socialSecurity        String
-  salaryDesired         Float
-  startDate             DateTime
-  positionApplied       String
-  equipmentExperience   String   // Text to store equipment and years of experience
+  fullName              String?
+  date                  DateTime?
+  address               String?
+  apartmentUnit         String?
+  city                  String?
+  state                 String?
+  zipCode               String?
+  phone                 String?
+  email                 String?
+  dateOfBirth           DateTime?
+  socialSecurity        String?
+  salaryDesired         Float?
+  startDate             DateTime?
+  positionApplied       String?
+  equipmentExperience   String?   // Text to store equipment and years of experience
 
   // Legalities section
   authorizedToWork      Boolean?
@@ -50,36 +50,37 @@ model Applicant {
   accidentCount         Int?
   violationsLast3Years  Boolean?
   violationCount        Int?
-  trailerProficiency    String   // Could be "YES", "NO", "SOMEWHAT"
-  drugTestConsent       Boolean
+  trailerProficiency    String?   // Could be "YES", "NO", "SOMEWHAT"
+  drugTestConsent       Boolean?
 
   // Employment Preferences section
-  hoursDesired          String   // Options could be "Full-Time", "Part-Time", etc.
+  hoursDesired          String?   // Options could be "Full-Time", "Part-Time", etc.
   daysUnavailable       String?
-  willingToWorkOvertime Boolean
+  ListdaysUnavailable   String?
+  willingToWorkOvertime Boolean?
 
   // Emergency Contact section
-  emergencyContactName  String
-  emergencyContactPhone String
-  emergencyContactRelation String
-  isOver18              Boolean
-  gender                String
-  maritalStatus         String
-  ethnicity             String
+  emergencyContactName  String?
+  emergencyContactPhone String?
+  emergencyContactRelation String?
+  isOver18              Boolean?
+  gender                String?
+  maritalStatus         String?
+  ethnicity             String?
 
   // Previous Employment section
-  previousCompany       String
-  previousCompanyPhone  String
-  previousCompanyAddress String
-  previousSupervisor    String
-  previousJobTitle      String
-  startingSalary        Float
-  endingSalary          Float
-  previousResponsibilities String
-  previousEmploymentFrom DateTime
-  previousEmploymentTo   DateTime
-  reasonForLeaving       String
-  canContactSupervisor   Boolean
+  previousCompany       String?
+  previousCompanyPhone  String?
+  previousCompanyAddress String?
+  previousSupervisor    String?
+  previousJobTitle      String?
+  startingSalary        Float?
+  endingSalary          Float?
+  previousResponsibilities String?
+  previousEmploymentFrom DateTime?
+  previousEmploymentTo   DateTime?
+  reasonForLeaving       String?
+  canContactSupervisor   Boolean?
 
   // Military Service section
   militaryBranch        String?
@@ -87,10 +88,10 @@ model Applicant {
   militaryTo            DateTime?
 
   //imagen identification
-  identificationType    String   // Puede ser "SocialSecurity", "Real_ID", "Driver_License", "Passport", "Some_Other"
-  identificationImage   String  // URL o nombre del archivo de la imagen de identificación
-  applicationStatus     Int
-  publicId              String
+  identificationType    String?   // Puede ser "SocialSecurity", "Real_ID", "Driver_License", "Passport", "Some_Other"
+  identificationImage   String?  // URL o nombre del archivo de la imagen de identificación
+  applicationStatus     Int?
+  publicId              String?
   createdAt             DateTime @default(now())
   updatedAt             DateTime @updatedAt
 }
