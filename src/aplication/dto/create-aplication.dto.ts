@@ -47,7 +47,7 @@ export class CreateAplicationDto {
 
   // Employment Preferences
   @IsOptional() @IsString() hoursDesired?: string;
-  @IsOptional() @IsString() daysUnavailable?: string;
+  @IsOptional() @IsBoolean() daysUnavailable?: boolean;
   @IsOptional() @IsBoolean() willingToWorkOvertime?: boolean;
   @IsOptional() @IsString() ListdaysUnavailable?: string;
 

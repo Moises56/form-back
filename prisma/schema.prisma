@@ -55,7 +55,7 @@ model Applicant {
 
   // Employment Preferences section
   hoursDesired          String?   // Options could be "Full-Time", "Part-Time", etc.
-  daysUnavailable       String?
+  daysUnavailable       Boolean?
   ListdaysUnavailable   String?
   willingToWorkOvertime Boolean?
 

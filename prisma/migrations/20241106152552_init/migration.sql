@@ -36,7 +36,7 @@ CREATE TABLE `Applicant` (
     `trailerProficiency` VARCHAR(191) NULL,
     `drugTestConsent` BOOLEAN NULL,
     `hoursDesired` VARCHAR(191) NULL,
-    `daysUnavailable` VARCHAR(191) NULL,
+    `daysUnavailable` BOOLEAN NULL,
     `ListdaysUnavailable` VARCHAR(191) NULL,
     `willingToWorkOvertime` BOOLEAN NULL,
     `emergencyContactName` VARCHAR(191) NULL,
