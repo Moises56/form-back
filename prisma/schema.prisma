@@ -69,6 +69,7 @@ model Applicant {
   ethnicity             String?
 
   // Previous Employment section
+  previousEmployment    Boolean?
   previousCompany       String?
   previousCompanyPhone  String?
   previousCompanyAddress String?
@@ -83,6 +84,7 @@ model Applicant {
   canContactSupervisor   Boolean?
 
   // Military Service section
+  militaryService       Boolean?
   militaryBranch        String?
   militaryFrom          DateTime?
   militaryTo            DateTime?
@@ -92,6 +94,13 @@ model Applicant {
   identificationImage   String?  // URL o nombre del archivo de la imagen de identificación
   applicationStatus     Int?
   publicId              String?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+}
+
+model positionApplied {
+  id                    Int      @id @default(autoincrement())
+  fullName              String?
   createdAt             DateTime @default(now())
   updatedAt             DateTime @updatedAt
 }

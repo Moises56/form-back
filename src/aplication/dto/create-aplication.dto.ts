@@ -61,6 +61,7 @@ export class CreateAplicationDto {
   @IsOptional() @IsString() ethnicity?: string;
 
   // Previous Employment
+  @IsOptional() @IsBoolean() previousEmployment?: boolean;
   @IsOptional() @IsString() previousCompany?: string;
   @IsOptional() @IsString() previousCompanyPhone?: string;
   @IsOptional() @IsString() previousCompanyAddress?: string;
@@ -75,6 +76,7 @@ export class CreateAplicationDto {
   @IsOptional() @IsBoolean() canContactSupervisor?: boolean;
 
   // Military Service
+  @IsOptional() @IsBoolean() militaryService?: boolean;
   @IsOptional() @IsString() militaryBranch?: string;
   @IsOptional() @IsDateString() militaryFrom?: string;
   @IsOptional() @IsDateString() militaryTo?: string;

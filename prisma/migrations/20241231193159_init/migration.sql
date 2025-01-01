@@ -46,6 +46,7 @@ CREATE TABLE `Applicant` (
     `gender` VARCHAR(191) NULL,
     `maritalStatus` VARCHAR(191) NULL,
     `ethnicity` VARCHAR(191) NULL,
+    `previousEmployment` BOOLEAN NULL,
     `previousCompany` VARCHAR(191) NULL,
     `previousCompanyPhone` VARCHAR(191) NULL,
     `previousCompanyAddress` VARCHAR(191) NULL,
@@ -58,6 +59,7 @@ CREATE TABLE `Applicant` (
     `previousEmploymentTo` DATETIME(3) NULL,
     `reasonForLeaving` VARCHAR(191) NULL,
     `canContactSupervisor` BOOLEAN NULL,
+    `militaryService` BOOLEAN NULL,
     `militaryBranch` VARCHAR(191) NULL,
     `militaryFrom` DATETIME(3) NULL,
     `militaryTo` DATETIME(3) NULL,
@@ -65,6 +67,16 @@ CREATE TABLE `Applicant` (
     `identificationImage` VARCHAR(191) NULL,
     `applicationStatus` INTEGER NULL,
     `publicId` VARCHAR(191) NULL,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- CreateTable
+CREATE TABLE `positionApplied` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `fullName` VARCHAR(191) NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
 

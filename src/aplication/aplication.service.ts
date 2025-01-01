@@ -20,7 +20,7 @@ export class AplicationService {
     return this.prisma.applicant.findUnique({ where: { id } });
   }
 
-  async update(id: number, data: Partial<CreateAplicationDto>) {
+  async update(id: number, data: any) {
     return this.prisma.applicant.update({ where: { id }, data });
   }
 
